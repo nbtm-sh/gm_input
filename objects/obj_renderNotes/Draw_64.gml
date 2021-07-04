@@ -41,7 +41,7 @@ function draw_notes() {
 		note_pos[1] += 100 - calc_scroll(time_code);
 		
 		
-		draw_text_color(note_pos[0], note_pos[1], notes[i][1], 255, 255, 255, 255, 1);
+		draw_text_color(note_pos[0], note_pos[1], notes[i][1], 16777215, 16777215, 16777215, 16777215, 1);
 	}
 }
 
@@ -58,11 +58,17 @@ function draw_inputs() {
 			note_pos = calc_pos(nearest[0]);
 			note_pos[0] += 100;
 			note_pos[1] += 100 - calc_scroll(time_code);
-			draw_text_color(note_pos[0], note_pos[1], inputs[i][1], 65280, 65280, 65280, 65280, 1);
+			
+			colour = 65280;
+			if (nearest[1] != inputs[i][1]) {
+				colour = 255;	
+			}
+			
+			draw_text_color(note_pos[0], note_pos[1], inputs[i][1], colour, colour, colour, colour, 1);
 			continue;
 		}
 		
-		draw_text_color(note_pos[0], note_pos[1], inputs[i][1], 65535, 65535, 65535, 65535, 1);
+		draw_text_color(note_pos[0], note_pos[1], inputs[i][1], 255, 255, 255, 255, 1);
 	}
 }
 
