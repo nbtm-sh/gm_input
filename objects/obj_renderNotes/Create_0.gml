@@ -24,3 +24,5 @@ begin_timer = 0;
 end_timer = 0;
 
 time_code = 0;
+
+delta_time_window = 50;
