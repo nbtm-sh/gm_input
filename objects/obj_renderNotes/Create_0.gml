@@ -1,14 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-notes = [
-	[[0, "S"], [500, "F"], [1000, "J"]],
-	[[5000, "D"]]
-];
+notes = [[0, "S"], [500, "F"], [1000, "J"], [5000, "S"]];
 
-inputs = [
-	[[10, "S"]]
-];
+notes = json_stringify(notes);
+notes = json_parse(notes);
+
+inputs = [];
 
 map_start = false;
 line_duration = 5000;
