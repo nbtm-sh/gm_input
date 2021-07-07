@@ -30,6 +30,10 @@ function get_nearest_note(milis, range) {
 		}
 	}
 	
+	if (closest != "") {
+		return closest;
+	}
+	
 	return false;
 }
 
@@ -75,6 +79,7 @@ function draw_inputs() {
 		note_pos[1] += 100 - calc_scroll(time_code);
 		
 		nearest = get_nearest_note(inputs[i][0], delta_time_window);
+		draw_text(0, 300 + i*20, nearest); // Draw the inputs
 		
 		if (nearest != false) {
 			note_pos = calc_pos(nearest[0]);
